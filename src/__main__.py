@@ -61,15 +61,15 @@ def main(args):
         edge_ones.append((from_node, to_node, x['sequence_number']))
 
     if args.path_based:
-        the_g = nx.Graph()
-    else:
         the_g = nx.MultiDiGraph()
+    else:
+        the_g = nx.Graph()
 
     the_g.add_nodes_from(nodes)
     for pick in edge_ones:
         the_g.add_edge(pick[0], pick[1], number=pick[2])
 
-    if args.path_based:
+    if not args.path_based:
         S = [the_g.subgraph(c).copy() for c in nx.connected_components(the_g)]
     else:
         endnodes = []
