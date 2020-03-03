@@ -11,7 +11,7 @@ This main can be called using the following keywords :
 """
 
 import argparse
-import logging
+from src.__main__ import main
 
 
 parser = argparse.ArgumentParser(description="", add_help='How to use', prog='python main.py <options>')
@@ -28,6 +28,6 @@ parser.add_argument("-p", "--path", dest="path_based", default=False, action="st
 parser.add_argument("-c", "--components", dest="component_based", default=False, action="store_true",
     help="to process the input signatures and process output with connected components")
 
-
 args = parser.parse_args()
 
+main(args)
