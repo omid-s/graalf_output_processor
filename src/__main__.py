@@ -12,10 +12,10 @@ import os
 def save_files(edge_ones: list, graphs: list, output_dir: str, edges: dict):
     """
     saves the sub graphs to the file
-    :param edge_ones:
-    :param graphs:
-    :param output_dir:
-    :param edges:
+    :param edge_ones: the edges 
+    :param graphs: the subgraphs
+    :param output_dir: the directory to which the output should be saved
+    :param edges: edge to full line mapping dictionary
     :return:
     """
     data = []
