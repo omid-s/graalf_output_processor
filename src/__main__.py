@@ -36,6 +36,8 @@ def save_files(edge_ones: list, graphs: list, output_dir: str, edges: dict):
 
     for pick in data:
         cntr += 1
+        pick = sorted(pick)
+
         with open(os.path.join(output_dir, "%d.json" % cntr), "w") as the_file:
             json.dump([edges[x] for x in pick], the_file)
 
